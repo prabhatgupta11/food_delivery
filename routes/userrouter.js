@@ -100,3 +100,7 @@ userrouter.put("/:id/reset",async(req,res)=>{
 module.exports={
     userrouter
 }
+
+
+
+///working
