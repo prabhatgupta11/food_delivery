@@ -11,6 +11,10 @@ app.use("/user",userrouter)
 app.use("/restro",restrouter)
 app.use("/api",orderrouter)
 
+app.use("/",(req,res)=>{
+  res.send({msg:"working"})
+})
+
 app.listen(process.env.port,async(req,res)=>{
     try{
       await connection;
