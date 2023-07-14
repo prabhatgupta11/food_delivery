@@ -2,20 +2,20 @@ const express=require("express")
 require('dotenv').config()
 const {connection}=require("./db")
 const { userrouter } = require("./routes/userrouter")
-const { restrouter } = require("./routes/restro.route")
-const { orderrouter } = require("./routes/order.routes")
+var cors = require('cors')
+
 const app=express()
 
 app.use(express.json())
+app.use(cors())
 app.use("/user",userrouter)
-app.use("/restro",restrouter)
-app.use("/api",orderrouter)
+
 
 app.use("/",(req,res)=>{
   res.send({msg:"working"})
 })
 
-app.listen(process.env.port,async(req,res)=>{
+app.listen(process.env.port,async()=>{
     try{
       await connection;
       console.log("connected to database")

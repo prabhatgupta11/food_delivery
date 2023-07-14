@@ -4,6 +4,7 @@ const bcrypt=require("bcrypt");
 const jwt =require("jsonwebtoken")
 const userrouter=express.Router()
 
+
 //regiseter the user
 userrouter.post("/register",async(req,res)=>{
     try{
